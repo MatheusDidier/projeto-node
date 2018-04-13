@@ -7,7 +7,7 @@ var connMySql = function () {
     var configCnx = {
         host: "localhost",
         user: "root",
-        password: "",
+        password: "1234",
         database: "portal_noticias"
     };
 

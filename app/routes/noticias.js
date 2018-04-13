@@ -5,14 +5,11 @@ module.exports = function (application) {
 
     application.get('/noticias', function (req, res) {
 
-        var cnx = application.config.dbConnection();
-        var NoticiasDAO = new application.app.models.NoticiasDAO(cnx);
-
-        NoticiasDAO.getNoticias((erro, result) => {
-            res.render('noticias/noticias', { noticias: result });
-        })
-
-
+        application.app.controllers.noticias.noticias(application, req,res);
 
     });
+
+    application.get("/noticia", (request, response) => {
+        application.app.controllers.noticias.noticia(application, request, response);
+    })
 }
