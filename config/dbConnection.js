@@ -2,10 +2,12 @@
 var connMySql = function () {
 
     var mysql = require("mysql");
+
+
     var configCnx = {
         host: "localhost",
         user: "root",
-        password: "1234",
+        password: "",
         database: "portal_noticias"
     };
 

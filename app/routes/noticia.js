@@ -4,8 +4,9 @@ module.exports = function (application) {
     application.get("/noticia", (request, response) => {
 
         var cnx = application.config.dbConnection();
-        var noticia = application.app.models.noticiasModel;
-        noticia.getNoticia(cnx, (error, result) => {
+        var NoticiasDAO = new application.app.models.NoticiasDAO(cnx);
+        NoticiasDAO.getNoticia((error, result) => {
+            console.log(result);
             response.render("noticias/noticia", { noticia: result.shift() });
         })
 
